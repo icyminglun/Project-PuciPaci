@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+    <!--
+        Customize the content security policy in the meta tag below as needed. Add 'unsafe-inline' to default-src to enable inline JavaScript.
+        For details, see http://go.microsoft.com/fwlink/?LinkID=617521
+    -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+        
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/unit.css">
+        <link rel="stylesheet" href="css/jquery.mobile-1.4.5.css">
+        <link rel="stylesheet" href="css/themes/black.min.css" />
+        <link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" />
+
+        <script src="lib/jquery-1.11.2.min.js"></script>
+        <script src="lib/jquery.mobile-1.4.5.min.js"></script>
+        <script src="lib/jquery.validate.js"></script>
+
+        <title>Converter App</title>
+    </head>
+    <body>
+
+
+        <div data-role="page" id="unitconverter">
+            <div class="app">
+                <div>
+                    <a href="#" class="ui-btn ui-icon-home ui-btn-icon-left" id="Home">Converter App</a>
+                </div>
+
+                <div class="ui-content">
+                    Let the Unit Conversion App know what you are converting from and to
+                </div>
+
+                <div data-role="main" class="ui-content">
+                    <form name="conversionform" id="conversionform">
+                        <div class="ui-field-contain">
+
+                            <div data-role="navbar">
+                                <ul>
+                                    <li>
+                                        <label for="txtFrom">From</label>
+                                        <input type="text" name="txtFrom" id="txtFrom" placeholder="enter what you are converting from" value="Singapore Dollar" required>
+                                    </li>
+                                    <li>
+                                        <label for="txtTo">To</label>
+                                        <input type="text" name="txtTo" id="txtTo" placeholder="enter what you are converting to" value="Thai Baht" required>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div data-role="fieldcontainer">
+                                <fieldset data-role="controlgroup" data-type="horizontal">
+                    
+                                    <legend>Choose your Working Hours</legend>
+                                    <label for="currency">Currency</label>
+                                    <input type="radio" name="rdoCurrencyUnit" id="currency" value="Currency" checked>
+
+                                    <label for="unitMeasurement">Unit of Measurement</label>
+                                    <input type="radio" name="rdoCurrencyUnit" id="unitMeasurement" value="Unit of Measurement">
+                                </fieldset>
+                            </div>
+                            
+                            <fieldset>
+                                <label for="txtConversionRate">Conversion Rate</label>
+                                <input type="text" name="txtConversionRate" id="txtConversionRate" placeholder="enter conversion rate" value="22.5" required>
+                            </fieldset>
+
+                            <fieldset data-role="controlgroup" data-type="horizontal" class="comments">
+                                <legend>Greater/Equal</legend>
+                                <div>
+                                    <input type="text" name="txtGreaterEqual" id="txtGreaterEqual" placeholder="" value="500" required>
+                               
+                                    <input list="comment1" name="txtComment1" id="txtComment1" placeholder="enter comment" value="" required>
+                                    <datalist id="comment1">
+                                        <option value = "Expensive">
+                                        <option value = "Heavy">
+                                    </datalist>
+                                </div>
+                            </fieldset>   
+
+                            <fieldset data-role="controlgroup" data-type="horizontal" class="comments">
+                                <legend>Between</legend>
+                                <div class="comments2" style="float:left"> 
+                                    <input type="text" name="txtBetween1" id="txtBetween1" placeholder="" value="499" required>
+                                    <input type="text" name="txtBetween2" id="txtBetween2" placeholder="" value="200" required>
+                                
+                                    <input type="text" name="txtComment2" id="txtComment2" placeholder="enter comment" value="OK" required>
+                                </div>
+                            </fieldset>
+
+                            <fieldset data-role="controlgroup" data-type="horizontal" class="comments">
+                                <legend>Less than/Equal</legend>
+                                <div>
+                                    <input type="text" name="txtLessEqual" id="txtLessEqual" placeholder="" value="199" required>
+
+                                    <input list="comment3" name="txtComment3" id="txtComment3" placeholder="enter comment" value="" required>
+                                    <datalist id="comment3">
+                                        <option value="Cheap">
+                                        <option value="Light">
+                                    </datalist>
+                                </div>
+                            </fieldset>
+
+                            <input type="button" id="btnCalculate" value="Calculate">
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+           
+
+            <div data-role="footer" data-position="fixed">
+                <h1>Copyright 2017 OTBS</h1>
+            </div>
+        </div>
+
+
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="scripts/platformOverrides.js"></script>
+        <script type="text/javascript" src="scripts/unit.js"></script>
+        <script type="text/javascript" src="scripts/common.js"></script>
+    </body>
+</html>
